@@ -9,12 +9,9 @@ import edu.stanford.nlp.util.CoreMap;
 import java.util.*;
 
 public class CoreNlpService {
-
-
     public HashMap<String, Integer> parseSentence(String text) {
         HashMap<String, Integer> map = new HashMap<>();
         HashSet<String> keyPos = new HashSet<>();
-
         /**
          * exact important noun
          * NN	Noun, singular or mass
@@ -43,7 +40,6 @@ public class CoreNlpService {
                 String pos = token.get(CoreAnnotations.PartOfSpeechAnnotation.class);
                 if (keyPos.contains(pos)) {
                     word = word.toLowerCase();
-//                    System.out.println(String.format("Print: word: [%s] pos: [%s]", word, pos));
                     map.put(word, map.getOrDefault(word, 0) + 1);
                 }
             }

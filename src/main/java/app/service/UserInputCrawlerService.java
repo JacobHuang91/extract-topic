@@ -13,14 +13,12 @@ import java.util.HashMap;
 import java.util.HashSet;
 
 public class UserInputCrawlerService implements CrawlerService {
-
     private Sentence2WordsService sentence2WordsService;
 
     @Autowired
     public UserInputCrawlerService(Sentence2WordsService sentence2WordsService) {
         this.sentence2WordsService = sentence2WordsService;
     }
-
 
     /**
      * get meta data from website
@@ -85,7 +83,6 @@ public class UserInputCrawlerService implements CrawlerService {
     public HashMap<String, Integer> getContentKeywords(String url) {
         System.out.println("==========> Start to collect content data keywords");
         try {
-
             Connection connection = Jsoup.connect(url)
                     .userAgent("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/33.0.1750.152 Safari/537.36")
                     .cookie("auth", "token");

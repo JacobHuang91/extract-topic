@@ -4,7 +4,6 @@ import edu.stanford.nlp.util.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.HashMap;
-import java.util.List;
 
 public class Sentence2WordsService {
 
@@ -15,7 +14,6 @@ public class Sentence2WordsService {
         this.coreNlpService = coreNlpService;
     }
 
-
     /**
      * @param s the URL String
      * @return keywords map
@@ -23,7 +21,6 @@ public class Sentence2WordsService {
     public HashMap<String, Integer> parseSentenceUrl(String s) {
         HashMap<String, Integer> map = new HashMap<>();
         if (s == null || s.length() == 0) return map;
-
         String[] words = s.trim().split("\\W+");
 
         // reconstruct a sentence
@@ -45,10 +42,7 @@ public class Sentence2WordsService {
     public HashMap<String, Integer> parseSentenceQuery(String s) {
         HashMap<String, Integer> map = new HashMap<>();
         if (s == null || s.length() == 0) return map;
-
         String[] pairs = s.trim().split("&");
-
-
 
         for (String pair : pairs) {
             // only get the value
@@ -59,7 +53,6 @@ public class Sentence2WordsService {
             if (StringUtils.isNumeric(word)) continue;
             // filter too short words
             if (word.length() <= 2) continue;
-
 
             map.put(word, map.getOrDefault(word, 0) + 1);
         }

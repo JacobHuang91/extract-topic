@@ -26,3 +26,21 @@ So, I can add a higher weight for those words.
 Second, discover more powerful annotators in the CoreNLP. 
 
 Third, improve the performance of the app. 
+
+# How to use
+This is Maven project, so you can just run the MainClass.java file. 
+
+To generate a .jar file.
+
+You can just run 
+```bash
+mvn clean compile assembly:single
+```
+
+You can find the extract-topic-1.0-jar-with-dependencies.jar file in the target folder.
+
+Then run 
+```bash
+java -jar extract-topic-1.0-jar-with-dependencies.jar 
+```
+

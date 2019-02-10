@@ -7,7 +7,6 @@ import java.net.URL;
 import java.util.HashMap;
 
 public class UserInputUrlService implements UrlService {
-
     private Sentence2WordsService sentence2WordsService;
 
     @Autowired
@@ -35,7 +34,7 @@ public class UserInputUrlService implements UrlService {
 
     /**
      * @param s the URL String
-     * @return HashMap<String                               ,                                                               Integer> the URL Keywords
+     * @return HashMap keywords
      */
     public HashMap<String, Integer> parseUrl(String s) {
         System.out.println("==========> Start to collect keywords in URL");
@@ -47,7 +46,6 @@ public class UserInputUrlService implements UrlService {
             System.out.println("query = " + url.getQuery());
             String path = url.getPath();
             String query = url.getQuery();
-
 
             // parse path
             HashMap<String, Integer> keywordMapPath = sentence2WordsService.parseSentenceUrl(path);
